@@ -179,6 +179,12 @@ set wrap "Wrap lines
 " Add color bar at 80 caracters
 set colorcolumn=80
 
+" Show end of line
+set list
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+
+
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
