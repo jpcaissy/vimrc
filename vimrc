@@ -343,6 +343,9 @@ map <leader>pp :setlocal paste!<cr>
 map <leader>n :NERDTreeToggle<CR>
 
 map <Leader>b :MiniBufExplorer<cr>
+let NERDTreeIgnore = ['\.pyc$']
+
+autocmd FileType php set noexpandtab omnifunc=phpcomplete#CompletePHP
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
