@@ -128,7 +128,7 @@ set number
 " Enable syntax highlighting
 syntax on
 
-colorscheme peachpuff
+colorscheme evening
 "set background=dark
 
 " Set extra options when running in GUI mode
