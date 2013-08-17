@@ -31,7 +31,7 @@ setlocal nocindent
 setlocal autoindent
 setlocal comments=:#
 setlocal indentkeys+==end,=else,=do,=var,0!,=then,=loop,=special,=class,=interface,=universal
-setlocal sw=8
+setlocal sw=4
 
 " Only define the function once.
 if exists("*GetNITIndent")
