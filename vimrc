@@ -352,6 +352,7 @@ map <Leader>b :MiniBufExplorer<cr>
 let NERDTreeIgnore = ['\.pyc$']
 
 autocmd FileType php set noexpandtab omnifunc=phpcomplete#CompletePHP
+autocmd FileType javascript set shiftwidth=2 tabstop=2
 let g:syntastic_c_checkers=['splint', 'make', 'gcc']
 
 
