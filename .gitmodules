@@ -28,3 +28,12 @@
 [submodule "bundle/jinja2-syntx"]
 	path = bundle/jinja2-syntx
 	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/vim-javscript-syntax"]
+	path = bundle/vim-javscript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax.git
+[submodule "javascript-indent"]
+	path = javascript-indent
+	url = https://github.com/vim-scripts/JavaScript-Indent.git

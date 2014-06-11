@@ -128,8 +128,14 @@ set number
 " Enable syntax highlighting
 syntax on
 
-colorscheme evening
+"colorscheme darkblue
 "set background=dark
+syntax enable
+set background=dark
+"colorscheme koehler
+colorscheme solarized
+let g:solarized_termcolors=256
+
 
 " Set extra options when running in GUI mode
 if has("gui_running")
