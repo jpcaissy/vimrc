@@ -183,7 +183,7 @@ set si "Smart indent
 set wrap "Wrap lines
 
 " Add color bar at 80 caracters
-set colorcolumn=80
+set colorcolumn=120
 
 " Show end of line
 set list
@@ -359,6 +359,11 @@ let NERDTreeIgnore = ['\.pyc$']
 
 autocmd FileType php set expandtab shiftwidth=2 tabstop=2 omnifunc=phpcomplete#CompletePHP
 autocmd FileType javascript set shiftwidth=2 tabstop=2
+autocmd FileType rb set shiftwidth=2 tabstop=2
+autocmd FileType ruby set shiftwidth=2 tabstop=2
+autocmd FileType yml set shiftwidth=2 tabstop=2
+autocmd FileType yaml set shiftwidth=2 tabstop=2
+autocmd FileType coffee set shiftwidth=2 tabstop=2
 autocmd FileType rst set shiftwidth=2 tabstop=2
 autocmd FileType nit set shiftwidth=4 tabstop=4 noexpandtab
 let g:syntastic_c_checkers=['splint', 'make', 'gcc']
@@ -425,3 +430,11 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+colorscheme solarized
+
+set background=dark
+" solarized options 
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+colorscheme solarized
+let g:solarized_termcolors = 256
