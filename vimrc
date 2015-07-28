@@ -131,19 +131,13 @@ syntax on
 "colorscheme darkblue
 "set background=dark
 syntax enable
-set background=dark
+set background=light
 "colorscheme koehler
 colorscheme solarized
 let g:solarized_termcolors=256
 
 
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions+=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
+set t_Co=256
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
