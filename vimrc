@@ -136,7 +136,6 @@ set background=light
 colorscheme solarized
 let g:solarized_termcolors=256
 
-
 set t_Co=256
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -424,11 +423,11 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
-colorscheme solarized
+"colorscheme solarized
 
-set background=dark
+"set background=dark
 " solarized options 
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-colorscheme solarized
-let g:solarized_termcolors = 256
+"let g:solarized_visibility = "high"
+"let g:solarized_contrast = "high"
+"colorscheme solarized
+"let g:solarized_termcolors = 256
