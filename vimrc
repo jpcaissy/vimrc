@@ -351,6 +351,7 @@ map <Leader>b :MiniBufExplorer<cr>
 let NERDTreeIgnore = ['\.pyc$']
 
 autocmd FileType php set expandtab shiftwidth=2 tabstop=2 omnifunc=phpcomplete#CompletePHP
+autocmd FileType go set noexpandtab shiftwidth=4 tabstop=4
 autocmd FileType javascript set shiftwidth=2 tabstop=2
 autocmd FileType rb set shiftwidth=2 tabstop=2
 autocmd FileType ruby set shiftwidth=2 tabstop=2

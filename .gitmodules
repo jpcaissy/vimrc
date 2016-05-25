@@ -37,3 +37,6 @@
 [submodule "javascript-indent"]
 	path = javascript-indent
 	url = https://github.com/vim-scripts/JavaScript-Indent.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
