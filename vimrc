@@ -424,6 +424,9 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+let g:ctrlp_max_files = 80000
+let g:ctrlp_custom_ignore = { 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$' }
+
 "colorscheme solarized
 
 "set background=dark
