@@ -52,6 +52,9 @@ filetype indent on
 
 " Enable pathogen
 execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+Plug '~/src/fzf/'
+call plug#end()
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -362,6 +365,8 @@ autocmd FileType rst set shiftwidth=2 tabstop=2
 autocmd FileType nit set shiftwidth=4 tabstop=4 noexpandtab
 let g:syntastic_c_checkers=['splint', 'make', 'gcc']
 
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.jsx
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -424,14 +429,17 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
-let g:ctrlp_max_files = 80000
-let g:ctrlp_custom_ignore = { 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$' }
+"let g:ctrlp_max_files = 80000
+"let g:ctrlp_custom_ignore = { 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$' }
+
+set rtp+=/home/jpcaissy/src/fzf/bin/fzf
+map <C-P> :FZF <Enter>
 
 "colorscheme solarized
 
-"set background=dark
+set background=light
 " solarized options 
-"let g:solarized_visibility = "high"
-"let g:solarized_contrast = "high"
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
 "colorscheme solarized
 "let g:solarized_termcolors = 256

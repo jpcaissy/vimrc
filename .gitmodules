@@ -31,21 +31,21 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/vim-javscript-syntax"]
-	path = bundle/vim-javscript-syntax
-	url = https://github.com/jelera/vim-javascript-syntax.git
-[submodule "javascript-indent"]
-	path = javascript-indent
-	url = https://github.com/vim-scripts/JavaScript-Indent.git
 [submodule "bundle/vim-go"]
 	path = bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
 [submodule "bundle/vim-jsx"]
 	path = bundle/vim-jsx
 	url = git@github.com:mxw/vim-jsx.git
 [submodule "bundle/vim-jsx-typescript"]
 	path = bundle/vim-jsx-typescript
 	url = git@github.com:peitalin/vim-jsx-typescript.git
-[submodule "bundle/vim-javascript"]
-	path = bundle/vim-javascript
-	url = git@github.com:pangloss/vim-javascript.git
+[submodule "bundle/vim-elixir"]
+	path = bundle/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir.git
+[submodule "bundle/fzf"]
+	path = bundle/fzf
+	url = https://github.com/junegunn/fzf.vim.git
