@@ -54,7 +54,10 @@ filetype indent on
 execute pathogen#infect()
 call plug#begin('~/.vim/plugged')
 Plug '~/src/fzf/'
+Plug '~/src/vim-polyglot/'
 call plug#end()
+
+let g:python_highlight_all = 1
 
 " Set to auto read when a file is changed from the outside
 set autoread
