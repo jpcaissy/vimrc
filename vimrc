@@ -34,6 +34,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_go_checkers = ['go', 'gofmt']
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_checkers = ['python', 'pyflakes']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -123,8 +125,8 @@ set shiftwidth=4
 set tabstop=4
 
 " Linebreak on 500 characters
-set lbr
-set tw=500
+"set lbr
+"set tw=500
 
 set ai "Auto indent
 set si "Smart indent
