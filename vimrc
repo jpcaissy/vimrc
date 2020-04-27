@@ -141,6 +141,16 @@ set colorcolumn=120
 set list
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
+" spell check
+set spelllang=fr
+set spellfile=$HOME/.vim/spell/fr.utf-8.add
+
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.tex setlocal spell
+
+hi clear SpellBad
+hi SpellBad cterm=underline,bold ctermfg=88
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
