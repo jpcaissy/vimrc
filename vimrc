@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'vim-syntastic/syntastic'
     Plug 'sheerun/vim-polyglot'
+    Plug 'jlanzarotta/bufexplorer'
 call plug#end()
 
 set history=1500
@@ -33,7 +34,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_go_checkers = ['go', 'gofmt']
+" let g:syntastic_go_checkers = ['go', 'gofmt', 'govet', 'gographql']
+let g:syntastic_go_checkers = ['go', 'gofmt', 'govet']
 let g:syntastic_python_python_exec = 'python3'
 let g:syntastic_python_checkers = ['python', 'pyflakes']
 
@@ -213,5 +215,3 @@ endfunction
 
 set rtp+=/home/jpcaissy/src/fzf/bin/fzf
 map <C-P> :FZF <Enter>
-
-
