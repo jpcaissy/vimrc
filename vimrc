@@ -36,8 +36,10 @@ let g:syntastic_check_on_wq = 0
 
 " let g:syntastic_go_checkers = ['go', 'gofmt', 'govet', 'gographql']
 let g:syntastic_go_checkers = ['go', 'gofmt', 'govet']
-let g:syntastic_python_python_exec = 'python3'
-let g:syntastic_python_checkers = ['python', 'pyflakes']
+let g:syntastic_python_python_exec = 'python'
+let g:syntastic_python_checkers = ['python', 'flake8', 'pyflakes', 'mypy']
+
+let g:python_highlight_all = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -102,7 +104,7 @@ syntax on
 syntax enable
 colorscheme solarized
 let g:solarized_termcolors=256
-set background=dark
+set background=light
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 
