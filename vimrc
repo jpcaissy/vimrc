@@ -8,6 +8,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-syntastic/syntastic'
     Plug 'sheerun/vim-polyglot'
     Plug 'jlanzarotta/bufexplorer'
+    Plug 'prabirshrestha/vim-lsp'
+    " Optional but recommended: sensible defaults and easy server configs
+    Plug 'mattn/vim-lsp-settings'
 call plug#end()
 
 set history=1500
@@ -104,7 +107,7 @@ syntax on
 syntax enable
 colorscheme solarized
 let g:solarized_termcolors=256
-set background=light
+set background=dark
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 
@@ -214,6 +217,78 @@ autocmd FileType coffee set shiftwidth=2 tabstop=2
 autocmd FileType rst set shiftwidth=2 tabstop=2
 autocmd FileType nit set shiftwidth=4 tabstop=4 noexpandtab
 
+" ruff and LSP for python
+if executable('uv')
+"  augroup LspRuff
+"    autocmd!
+"    autocmd User lsp_setup call lsp#register_server({
+"          \ 'name': 'ruff',
+"          \ 'cmd': {server_info->['uv', 'run', 'ruff', 'server']},
+"          \ 'allowlist': ['python'],
+"          \ })
+"  augroup END
+
+  augroup LspPyLsp
+    autocmd!
+    autocmd User lsp_setup call lsp#register_server({
+          \ 'name': 'pylsp',
+          \ 'cmd': {server_info->['uv', 'run', 'pylsp']},
+          \ 'allowlist': ['python'],
+          \ })
+  augroup END
+
+  augroup LspPythonMappings
+      autocmd!
+      autocmd FileType python nnoremap <buffer> gd :LspDefinition<CR>
+      autocmd FileType python nnoremap <buffer> gD :LspTypeDefinition<CR>
+      autocmd FileType python nnoremap <buffer> gr :LspReferences<CR>
+      autocmd FileType python nnoremap <buffer> K  :LspHover<CR>
+    augroup END
+endif
+
+" Enable diagnostics and show message for the current line
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+
+" Signs in the gutter
+let g:lsp_diagnostics_signs_enabled = 1
+
+" Optional: underline issues
+let g:lsp_diagnostics_highlights_enabled = 1
+
+" Enable hover in LSP
+let g:lsp_hover_enabled = 1
+
+" enable auto format on save with ruff for python files
+function! s:RuffFormatBuffer() abort
+  if &filetype !=# 'python'
+    return
+  endif
+  if !executable('uv')
+    echohl WarningMsg | echom "uv not found in PATH; cannot run ruff format" | echohl None
+    return
+  endif
+  let l:view = winsaveview()
+  silent keepjumps %!uv run ruff format --stdin-filename % -
+  call winrestview(l:view)
+endfunction
+
+" Enable Ruff's format on save
+augroup RuffFormatOnSave
+  autocmd!
+  autocmd BufWritePre *.py call s:RuffFormatBuffer()
+augroup END
+
+augroup LspHoverKey
+  autocmd!
+  autocmd FileType python nnoremap <buffer> K :LspHover<CR>
+augroup END
+
+" fzf
+
+set rtp+=/home/jpcaissy/src/fzf/bin/fzf
+let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git --exclude .venv --exclude .mypy_cache --exclude __pycache__ --exclude .ruff_cache'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -224,6 +299,4 @@ function! HasPaste()
     en
     return ''
 endfunction
-
-set rtp+=/home/jpcaissy/src/fzf/bin/fzf
 map <C-P> :FZF <Enter>
